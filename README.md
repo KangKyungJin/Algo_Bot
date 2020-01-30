@@ -8,19 +8,13 @@ The api can be found here : http://18.223.166.150/api/algos || github for api: h
 * [Angular] - Frontend framework used for API
 * [Mongoose / MongoDB] - Backend / database
 
-## Contributing
-
-* Kyung Jin Kang
-* Erik Pancakes
-* Andrew Sun
-
 ## Versioning
 
 We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags). 
 
 ## Authors
 
-* **Kyung Jin Kang, Erik Pancakes, Andrew Sun **
+* Kyung Jin Kang | Erik Pancakes | Andrew Sun 
 
 ## License
 
