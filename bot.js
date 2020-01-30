@@ -1,6 +1,7 @@
 const Discord = require('discord.js');
 const config = require('./config.json');
 const fetch = require('node-fetch');
+const fs = require('fs');
 
 // Initialize Discord Bot
 const bot = new Discord.Client({disableEveryone: true});
@@ -19,6 +20,24 @@ bot.on('ready', async () => {
             })
 });
 
+// load commands
+bot.commands = new Discord.Collection();
+fs.readdir("./commands/", (err, files) => {
+    if (err) console.error(err);
+    let jsfiles = files.filter(f => f.split(".").pop() === "js")
+
+    if (jsfiles.length <= 0) {
+        console.log("There are no commands");
+        return;
+    }
+
+    console.log(`Loading ${jsfiles.length} commands...`)
+    jsfiles.forEach(f => {
+        let props = require(`./commands/${f}`);
+        bot.commands.set(props.help.name, props);
+    })
+});
+
 //bot commands
 bot.on('message', async message => {
     if (message.author.bot) return;
@@ -26,22 +45,13 @@ bot.on('message', async message => {
 
     let prefix = config.prefix;
     let messageArray = message.content.split(" ");
-    let cmd = messageArray[0];
+    let command = messageArray[0].toLowerCase();
     let args = messageArray.slice(1);
 
-    // command for bot info
-    if (cmd === `${prefix}info`) {
-        return message.channel.send(
-            "Hello, I'm Algo_Bot \n" +
-            "Commands: \n" +
-            "!info - command list \n" +
-            "!algo - gives a random algorithm"
+    if (!command.startsWith(prefix)) return;
 
-        );
-    }
-    // command for returning random algos
-    if (cmd === `${prefix}algo`) {
-        let num = Math.floor(Math.random() * algoProblem.length-1);
-        return message.channel.send("Difficulty: " + algoProblem[num].difficulty +  "\n Algorithm: " + algoProblem[num].algorithm);
+    let cmd = bot.commands.get(command.slice(prefix.length));
+    if (cmd) {
+        cmd.run(bot, message, args, algoProblem);
     }
 });
