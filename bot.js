@@ -21,7 +21,7 @@ const queue = new Map();
 
 bot.on('ready', () => {
     console.log("Connected");
-    fetch("http://localhost:8000/api/algos")
+    fetch("http://18.223.166.150/api/algos")
         .then(res => res.json())
             .then(data => {
                 algoProblem = data.results;
