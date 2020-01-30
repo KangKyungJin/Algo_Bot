@@ -5,8 +5,8 @@ The Algo_Bot is a discord bot that can be commanded to give out practice algorit
 The api can be found here : http://18.223.166.150/api/algos || github for api: https://github.com/KangKyungJin/Algo_Bot_API
 ## Built With
 
-* [Discord.js] - The discord library used
-* [Angular] - Frontend framework used for API
+* [Discord.js] - The discord library used for all bot functionality
+* [Angular] - Frontend framework used for API and submitting new algos
 * [Mongoose / MongoDB] - Backend / database
 
 ## Authors
