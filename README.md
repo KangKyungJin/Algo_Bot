@@ -9,6 +9,11 @@ The api can be found here : http://18.223.166.150/api/algos || github for api: h
 * !info - command list
 * !algos - returns a random algo to solve
 * !meme - returns a meme
+* !play {{url}} - plays the mp3 of a youtube link(url)
+* !skip - skips the currently playing song
+* !stop - stops the bot from playing music and disconnects from voice channel
+* !clear {{num}} - clears 'num' amount of previous messages
+* !embed - shows your current discord info
 
 ## Built With
 
@@ -24,6 +29,9 @@ The api can be found here : http://18.223.166.150/api/algos || github for api: h
 * random-puppy
 * snekfetch
 * winston
+* ytdl-core
+* opusscript
+* ffmpeg
 * mongoose
 * path
 
