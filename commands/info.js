@@ -1,6 +1,6 @@
 const Discord = require("discord.js");
 
-module.exports.run = async (bot, message, args, algoProblem) => {
+module.exports.run = async (bot, message, args, algoProblem, server, ago) => {
     return message.channel.send(
         "Hello, I'm Algo_Bot \n" +
         "Commands: \n" +

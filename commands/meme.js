@@ -1,7 +1,7 @@
 const randomPuppy = require('random-puppy');
 const snekfetch = require('snekfetch');
 
-module.exports.run = async (bot, message, args, algoProblem) => {
+module.exports.run = async (bot, message, args, algoProblem, server, argo) => {
     let reddit = [
         "ProgrammerHumor",
         "2meirl4meirl",

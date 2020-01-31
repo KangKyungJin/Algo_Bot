@@ -7,6 +7,7 @@ const fs = require('fs');
 const bot = new Discord.Client({disableEveryone: true});
 bot.login(config.token);
 
+var servers = {};
 var algoProblem;
 
 //initiallizes bot and fetches api data
@@ -47,11 +48,13 @@ bot.on('message', async message => {
     let messageArray = message.content.split(" ");
     let command = messageArray[0].toLowerCase();
     let args = messageArray.slice(1);
+    let argo = message.content.substring(prefix.length).split(" ");
 
     if (!command.startsWith(prefix)) return;
 
+
     let cmd = bot.commands.get(command.slice(prefix.length));
     if (cmd) {
-        cmd.run(bot, message, args, algoProblem);
+        cmd.run(bot, message, args, algoProblem, servers, argo);
     }
 });
