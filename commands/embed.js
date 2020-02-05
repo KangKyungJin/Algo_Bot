@@ -1,7 +1,7 @@
 const Discord = require('discord.js');
 
 module.exports.run = async (bot, message, args, algoProblem, servers, argo) => { 
-    // displays uer information in an embed format based on who sent the message.    
+    // displays user information in an embed format based on who sent the message.    
     const embed = new Discord.RichEmbed()
     .setTitle('User info')
     .setThumbnail(message.author.avatarURL)

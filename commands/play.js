@@ -1,7 +1,7 @@
 const ytdl = require('ytdl-core');
 
 module.exports.run = async (bot, message, args, algoProblem, servers, argo) => {
-    //plays the first song in the queue. if queue doesnt exist creats one if it does it adds to the back.
+    //plays the first song in the queue. if queue doesnt exist creats one. if it does it adds to the back.
     function play(connection,message){
         var server =servers[message.guild.id];
 
