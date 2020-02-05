@@ -1,6 +1,7 @@
 const ytdl = require('ytdl-core');
 
 module.exports.run = async (bot, message, args, algoProblem, servers, argo) => {
+    //deletes the queue and kick the bot foem the voice chanel.
     var server =servers[message.guild.id];
             if(message.guild.voiceConnection){
                 for (var i =server.queue.length-1; i >= 0;i--){
