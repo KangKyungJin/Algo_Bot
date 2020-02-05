@@ -39,7 +39,7 @@ The api can be found here : http://18.223.166.150/api/algos || github for api: h
 
 ## Authors
 
-* Kyung Jin Kang | Erik Pancakes | Andrew Sun 
+* Kyung Jin Kang | Erik Pratis | Andrew Sun 
 
 ## License
 
