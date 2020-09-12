@@ -8,7 +8,7 @@
         "discord.js": "^11.5.1",
         "fs": "0.0.1-security",
         "mongoose": "^5.8.10",
-        "node-fetch": "^2.6.0",
+        "node-fetch": "^2.6.1",
         "opusscript": "0.0.7",
         "path": "^0.12.7",
         "random-puppy": "^1.1.0",
